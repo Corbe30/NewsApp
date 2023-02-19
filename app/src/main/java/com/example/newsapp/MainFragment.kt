@@ -20,6 +20,7 @@ class MainFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
     private lateinit var linearLayoutManager: LinearLayoutManager
     val adapter = NewsListAdapter()
+    lateinit var data : ArrayList<*>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,10 +49,15 @@ class MainFragment : Fragment() {
         viewModel.newsList.observe(viewLifecycleOwner,  { onGetNewsResponse(it) })
     }
 
-    fun onGetNewsResponse(response : List<Result>?){
+    fun onGetNewsResponse(resultResponse : List<Result>?){
         if (resultResponse != null) {
             adapterListSubmit(resultResponse)
         }
+    }
+
+    private fun adapterListSubmit(resultResponse: List<Result>) {
+        data = resultResponse as ArrayList<*>
+        adapter.submitList(data)
     }
 
     fun initAdapter() {
