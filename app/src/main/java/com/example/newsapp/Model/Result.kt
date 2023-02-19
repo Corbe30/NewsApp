@@ -1,4 +1,4 @@
-package Model
+package com.example.newsapp.Model
 
 class Result(
     val adult: Boolean,

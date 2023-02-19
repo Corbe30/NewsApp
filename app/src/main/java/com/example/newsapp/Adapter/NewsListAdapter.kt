@@ -1,13 +1,13 @@
-package Adapter
+package com.example.newsapp.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newsapp.R
 
-class NewsListAdapter  : ListAdapter<Any, RecyclerView.ViewHolder>(MovieListDiffCallback()) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
-        print("On create ViewHOlder")
+class NewsListAdapter  : ListAdapter<Any, RecyclerView.ViewHolder>(DiffCallback()) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsListViewHolder {
         var viewHolder : RecyclerView.ViewHolder? = null
         val inflater = LayoutInflater.from(parent.context)
         when(viewType){
