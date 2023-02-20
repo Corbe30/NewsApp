@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.Adapter.NewsListAdapter
 import kotlinx.android.synthetic.main.fragment_main.*
+import com.example.newsapp.Model.Result
 
 class MainFragment : Fragment() {
 
@@ -51,6 +52,7 @@ class MainFragment : Fragment() {
 
     fun onGetNewsResponse(resultResponse : List<Result>?){
         if (resultResponse != null) {
+            println(resultResponse)
             adapterListSubmit(resultResponse)
         }
     }
